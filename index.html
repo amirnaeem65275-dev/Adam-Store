@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>متجر آدم | Adam Store</title>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#14213d">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="متجر آدم">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f7fb;--card:#fff;--ink:#14213d;--mute:#5b6478;--line:#e2e5ee;--acc:#f28c18;--acc-ink:#1b1200;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1524;--card:#18203a;--ink:#eef1fa;--mute:#9aa3bd;--line:#2a3354}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Tajawal',system-ui,Tahoma,sans-serif;line-height:1.6}
+header{padding:28px 18px 8px;max-width:960px;margin:auto}
+h1{font-size:2rem;font-weight:800;margin:0}
+header p{color:var(--mute);margin:4px 0 0}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:14px 18px;max-width:960px;margin:auto}
+.tab{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:7px 16px;font:inherit;cursor:pointer;white-space:nowrap}
+.tab[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+main{max-width:960px;margin:auto;padding:0 18px 110px;display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px}
+.p{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.pic{aspect-ratio:1;display:grid;place-items:center;font-size:3.4rem}
+.pic img{width:100%;height:100%;object-fit:cover}
+.info{padding:10px 12px 12px;display:flex;flex-direction:column;gap:2px;flex:1}
+.name{font-weight:700}.desc{color:var(--mute);font-size:.85rem;flex:1}.price{font-weight:800;margin-top:4px}
+button{font:inherit}
+.add,.send{background:var(--acc);color:var(--acc-ink);border:0;border-radius:10px;font-weight:700;padding:9px;cursor:pointer;margin-top:8px}
+.bar{position:fixed;inset-inline:0;bottom:0;background:var(--card);border-top:1px solid var(--line);padding:12px 18px calc(12px + env(safe-area-inset-bottom,0px));display:flex;align-items:center;justify-content:space-between;gap:12px}
+.bar .send{margin:0;padding:10px 20px}
+dialog{border:1px solid var(--line);border-radius:16px;background:var(--card);color:var(--ink);width:min(92vw,440px);padding:18px;max-height:90vh;overflow:auto}
+dialog::backdrop{background:rgba(0,0,0,.45)}
+.row{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 0;border-bottom:1px solid var(--line)}
+.q button{min-width:28px;height:28px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.empty{color:var(--mute);padding:10px 0}
+.close{background:none;border:0;color:var(--mute);cursor:pointer;margin-top:10px}
+.f{width:100%;margin:6px 0;padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);font:inherit}
+.pay{display:flex;gap:8px;align-items:center;padding:5px 0}
+</style>
+</head>
+<body>
+<script id="data" type="application/json">{"shop":{"name":"متجر آدم","nameEn":"Adam Store","tagline":"منتجات مختارة، وتوصيل داخل مصر","whatsapp":"971504988515","instapay":"اكتب عنوان انستا باي هنا","vcash":"اكتب رقم فودافون كاش هنا","currency":"جنيه"},"shipping":{"القاهرة":50,"الجيزة":50,"الإسكندرية":60,"القليوبية":55,"الدقهلية":70,"الشرقية":70,"الغربية":70,"المنوفية":65,"البحيرة":70,"كفر الشيخ":75,"دمياط":75,"بورسعيد":80,"الإسماعيلية":75,"السويس":75,"الفيوم":70,"بني سويف":75,"المنيا":85,"أسيوط":90,"سوهاج":95,"قنا":100,"الأقصر":105,"أسوان":110,"البحر الأحمر":130,"مطروح":130,"شمال سيناء":140,"جنوب سيناء":140,"الوادي الجديد":150},"products":[{"id":1,"name":"كوب حراري","desc":"يحفظ المشروب ساخن 6 ساعات","price":250,"cat":"المنزل","icon":"☕","color":"#fde6c8","img":""},{"id":2,"name":"مفرش طاولة","desc":"قماش قطن مقاوم للبقع","price":350,"cat":"المنزل","icon":"🧺","color":"#d8f0dd","img":""},{"id":3,"name":"شاحن سريع","desc":"شحن سريع للموبايل","price":300,"cat":"إلكترونيات","icon":"🔌","color":"#d9ecf7","img":""},{"id":4,"name":"سماعة لاسلكية","desc":"بلوتوث وبطارية تدوم يوم","price":650,"cat":"إلكترونيات","icon":"🎧","color":"#e4dcf6","img":""},{"id":5,"name":"عطر هدية","desc":"عبوة هدايا جاهزة","price":500,"cat":"هدايا","icon":"🎁","color":"#fbd9df","img":""},{"id":6,"name":"حقيبة قماش","desc":"خفيفة ومتينة لليوم","price":280,"cat":"هدايا","icon":"👜","color":"#f4e6b8","img":""}]}</script>
+
+<header><h1 id="shopName"></h1><p id="tagline"></p></header>
+<nav class="tabs" id="tabs" aria-label="الأقسام"></nav>
+<main id="grid"></main>
+<div class="bar"><span>السلة: <b id="count">0</b> · الإجمالي: <b id="total">0</b></span><button class="send" id="open">مراجعة الطلب</button></div>
+
+<dialog id="cart">
+  <h2 style="margin:0 0 6px">طلبك</h2>
+  <div id="lines"></div>
+  <p style="font-weight:800;margin:12px 0 0">الإجمالي: <span id="sum">0</span></p>
+  <div style="margin-top:14px">
+    <b>بيانات التوصيل</b>
+    <input class="f" id="fName" aria-label="الاسم" placeholder="الاسم بالكامل" autocomplete="name">
+    <input class="f" id="fPhone" type="tel" inputmode="tel" aria-label="رقم الموبايل" placeholder="رقم الموبايل" autocomplete="tel">
+    <select class="f" id="fGov" aria-label="المحافظة"></select>
+    <p id="ship" style="margin:0 0 4px;color:var(--mute);font-size:.9rem"></p>
+    <input class="f" id="fAddr" aria-label="الشارع والمنطقة" placeholder="الشارع والمنطقة" autocomplete="street-address">
+    <input class="f" id="fBuild" aria-label="العمارة والدور والشقة" placeholder="رقم العمارة، الدور، رقم الشقة">
+    <input class="f" id="fNote" aria-label="ملاحظات" placeholder="ملاحظات (اختياري)">
+    <b style="display:block;margin-top:10px">طريقة الدفع</b>
+    <label class="pay"><input type="radio" name="pay" value="كاش عند الاستلام"> كاش عند الاستلام</label>
+    <label class="pay"><input type="radio" name="pay" value="انستا باي"> انستا باي</label>
+    <label class="pay"><input type="radio" name="pay" value="فودافون كاش"> فودافون كاش</label>
+    <p id="ip" class="empty" style="display:none;margin:6px 0"></p>
+    <p id="hint" style="color:#c0392b;margin:6px 0 0;font-size:.85rem"></p>
+  </div>
+  <a id="wa" target="_blank" rel="noopener" style="display:block;text-align:center;text-decoration:none;margin-top:8px;background:var(--acc);color:var(--acc-ink);border-radius:10px;font-weight:700;padding:10px">أرسل الطلب على واتساب</a>
+  <button class="close" id="copy">لو الزرار مفتحش: انسخ نص الطلب</button>
+  <button class="close" id="close">رجوع للمتجر</button>
+</dialog>
+
+<script>
+const $ = s => document.querySelector(s);
+const D = JSON.parse($("#data").textContent);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const val = id => ($("#" + id).value || "").trim();
+const cart = {};
+let cat = "الكل";
+const S = D.shop;
+$("#shopName").innerHTML = esc(S.name) + ' <small dir="ltr" style="font-weight:500;color:var(--mute);font-size:.55em;white-space:nowrap">' + esc(S.nameEn) + '</small>';
+$("#tagline").textContent = S.tagline;
+$("#fGov").innerHTML = '<option value="">اختار المحافظة</option>' + Object.keys(D.shipping).map(g => '<option>' + g + '</option>').join("");
+
+function drawTabs(){
+  const cats = ["الكل", ...new Set(D.products.map(p => p.cat))];
+  $("#tabs").innerHTML = "";
+  cats.forEach(c => { const b = document.createElement("button"); b.className = "tab"; b.textContent = c; b.setAttribute("aria-pressed", c === cat); b.onclick = () => { cat = c; drawTabs(); drawGrid(); }; $("#tabs").appendChild(b); });
+}
+function drawGrid(){
+  const has = D.products.length > 0;
+  $("#grid").innerHTML = has ? "" : '<p class="empty" style="grid-column:1/-1">المنتجات قريباً. كلمنا على واتساب.</p>';
+  $("#tabs").style.display = has ? "" : "none";
+  document.querySelector(".bar").style.display = has ? "" : "none";
+  D.products.filter(p => cat === "الكل" || p.cat === cat).forEach(p => {
+    const d = document.createElement("article"); d.className = "p";
+    d.innerHTML = '<div class="pic" style="background:' + esc(p.color||"#e8ecf5") + '">' + (p.img ? '<img src="' + esc(p.img) + '" alt="' + esc(p.name) + '">' : esc(p.icon||"🛍️")) + '</div><div class="info"><span class="name">' + esc(p.name) + '</span><span class="desc">' + esc(p.desc||"") + '</span><span class="price">' + p.price + ' ' + S.currency + '</span><button class="add">أضف للسلة</button></div>';
+    d.querySelector(".add").onclick = () => { cart[p.id] = (cart[p.id]||0) + 1; update(); };
+    $("#grid").appendChild(d);
+  });
+}
+function totals(){ let n = 0, t = 0; D.products.forEach(p => { const q = cart[p.id]||0; n += q; t += q*p.price; }); return {n, t}; }
+function update(){ const {n, t} = totals(); $("#count").textContent = n; $("#total").textContent = t + " " + S.currency; }
+function drawCart(){
+  const {n} = totals();
+  $("#lines").innerHTML = n ? "" : '<p class="empty">السلة فاضية، أضف منتجات من المتجر.</p>';
+  D.products.filter(p => cart[p.id]).forEach(p => {
+    const r = document.createElement("div"); r.className = "row";
+    r.innerHTML = '<span>' + esc(p.name) + '</span><span class="q"><button aria-label="نقص">−</button> ' + cart[p.id] + ' <button aria-label="زود">+</button></span><span>' + cart[p.id]*p.price + '</span>';
+    const [m, a] = r.querySelectorAll("button");
+    m.onclick = () => { cart[p.id]--; if (!cart[p.id]) delete cart[p.id]; update(); drawCart(); };
+    a.onclick = () => { cart[p.id]++; update(); drawCart(); };
+    $("#lines").appendChild(r);
+  });
+  refreshWa();
+}
+const waMsg = () => {
+  const lines = D.products.filter(p => cart[p.id]).map(p => "• " + p.name + " × " + cart[p.id] + " = " + cart[p.id]*p.price + " " + S.currency);
+  const pay = (document.querySelector('input[name=pay]:checked')||{}).value || "";
+  const ship = D.shipping[val("fGov")] || 0, NL = String.fromCharCode(10);
+  const info = ["الاسم: " + val("fName"), "الموبايل: " + val("fPhone"), "المحافظة: " + val("fGov"), "العنوان: " + val("fAddr") + " - " + val("fBuild"), "طريقة الدفع: " + pay, "الشحن: " + ship + " " + S.currency, "الإجمالي شامل الشحن: " + (totals().t + ship) + " " + S.currency].concat(val("fNote") ? ["ملاحظات: " + val("fNote")] : []);
+  return "https://wa.me/" + S.whatsapp + "?text=" + encodeURIComponent("مرحباً، عايز أطلب:" + NL + lines.join(NL) + NL + NL + info.join(NL));
+};
+function refreshWa(){
+  const {n, t} = totals();
+  const gov = val("fGov"), fee = D.shipping[gov] || 0;
+  $("#ship").textContent = gov ? "الشحن إلى " + gov + ": " + fee + " " + S.currency : "اختار المحافظة عشان يظهر الشحن.";
+  $("#sum").textContent = (t + fee) + " " + S.currency;
+  const payEl = document.querySelector('input[name=pay]:checked');
+  const ok = n && val("fName") && val("fPhone").replace(/\D/g, "").length >= 10 && gov && val("fAddr") && payEl;
+  $("#wa").href = ok ? waMsg() : "#";
+  $("#wa").style.opacity = ok ? 1 : .5;
+  $("#wa").onclick = ok ? null : e => { e.preventDefault(); $("#hint").textContent = "كمّل الاسم والموبايل والعنوان وطريقة الدفع الأول."; };
+  if (ok) $("#hint").textContent = "";
+  const pv = payEl ? payEl.value : "";
+  $("#ip").style.display = (pv === "انستا باي" || pv === "فودافون كاش") ? "block" : "none";
+  $("#ip").textContent = pv === "انستا باي" ? "حوّل المبلغ على انستا باي: " + S.instapay + " وابعت صورة التحويل على واتساب." : "حوّل المبلغ على فودافون كاش: " + S.vcash + " وابعت صورة التحويل على واتساب.";
+}
+$("#copy").onclick = () => { try { navigator.clipboard.writeText(decodeURIComponent(waMsg().split("?text=")[1])).then(() => { $("#copy").textContent = "تم النسخ، ابعته على واتساب"; }); } catch (e) {} };
+$("#cart").addEventListener("input", refreshWa);
+$("#open").onclick = () => { drawCart(); $("#cart").showModal(); };
+$("#close").onclick = () => $("#cart").close();
+
+drawTabs(); drawGrid(); update();
+try { if ('serviceWorker' in navigator && location.protocol.startsWith('http')) navigator.serviceWorker.register('sw.js'); } catch (e) {}
+</script>
+</body>
+</html>
